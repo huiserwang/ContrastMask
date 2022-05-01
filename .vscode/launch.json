@@ -1,0 +1,21 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "debug train.py",
+            "type": "python",
+            "cwd": "/home/huiser/Desktop/Codes/ContrastMask",
+            "request": "launch",
+            "program": "iscript/train.py",
+            // "program": "${file}",
+            "args": ["iconfig/contrastmask_res50_fpn_coco_1x_nonvoc2voc.py", "--work-dir", "/home/huiser/Desktop/Codes/ContrastMask/test_dir", "--work_id", "20220430", "--exp_details", "reproduced_code_for_release", "--seed", "0", "--launcher", "none", "--deterministic"],
+            "console": "integratedTerminal",
+            "python": "/home/huiser/miniconda3/envs/mmdet/bin/python3.7",
+            "justMyCode": false
+            
+        },
+    ]
+}

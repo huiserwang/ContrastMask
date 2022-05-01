@@ -1,0 +1,1 @@
+bash ./iscript/dist_train.sh iconfig/contrastmask_res50_fpn_coco_1x_nonvoc2voc.py --deterministic --seed 0 --work-dir /home/huiser/Desktop/Codes/ContrastMask/test_dir --work_id 20220430 --exp_details reproduced_code_for_release

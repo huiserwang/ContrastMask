@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./mmdetection-2.14.0"
+    ]
+}
