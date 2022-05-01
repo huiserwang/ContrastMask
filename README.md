@@ -40,7 +40,7 @@ pip install -r requirements.txt
 
 First of all, please update the value of ``data_root`` as your dataset path in config files.
 
-Our code is based on MMDetection, thus the training and evaluation pipeline are the same with that in MMDetection. Here, we give an example script to train a model with res-50 backbone under 1x schedule for voc->nonvoc setting.
+Our code is based on MMDetection, thus the training and evaluation pipeline are the same with that in MMDetection. Here, we give an example script to train a model with res-50 backbone under 1x schedule for nonvoc->voc setting.
 ``` bash
 bash run_train.sh
 ```
