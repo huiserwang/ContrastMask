@@ -21,7 +21,7 @@ Partially-supervised instance segmentation is a task which requests segmenting o
 - cuda == 10.1
 - Pytorch == 1.7.0
 - MMDetection == 2.14.0
-- mmcv-full == 1.3.8
+- mmcv-full == 1.3.9
 
 You can install all packages we need through pip.
 ``` shell
