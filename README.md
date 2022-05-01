@@ -8,19 +8,16 @@
 <br>
 
 ## News
----
 - 2022/05/01 Code is available.
 - 2022/03/02 ContrastMask is accepted to **CVPR2022**
 
 ## Abstract
----
 Partially-supervised instance segmentation is a task which requests segmenting objects from novel categories via learning on limited base categories with annotated masks thus eliminating demands of heavy annotation burden. The key to addressing this task is to build an effective class-agnostic mask segmentation model. Unlike previous methods that learn such models only on base categories, in this paper, we propose a new method, named ContrastMask, which learns a mask segmentation model on both base and novel categories under a unified pixel-level contrastive learning framework. In this framework, annotated masks of base categories and pseudo masks of novel categories serve as a prior for contrastive learning, where features from the mask regions (foreground) are pulled together, and are contrasted against those from the background, and vice versa. Through this framework, feature discrimination between foreground and background is largely improved, facilitating learning of the class-agnostic mask segmentation model. Exhaustive experiments on the COCO dataset demonstrate the superiority of our method, which outperforms previous state-of-the-arts.
 
 <br>
 <br>
 
 ## Requirements
----
 - cuda == 10.1
 - Pytorch == 1.7.0
 - MMDetection == 2.14.0
@@ -35,7 +32,6 @@ pip install -r requirements.txt
 <br>
 
 ## Training and Evaluation
-----
 > Note: we reorganize the code from the initial version to make it more readable. There would exist some bugs... Please let me know and I will update it as soon as possible.
 
 > Note: There exists a minor mistake in Figure.5 of our paper. The encoded feature map $\textbf{Y}$ from CLHead are added on rather than concatenated with the roi feature map $\textbf{X}$ in our code.
@@ -66,7 +62,6 @@ bash ./iscript/dist_test.sh iconfig/contrastmask_res50_fpn_coco_1x_nonvoc2voc.py
 <br>
 
 ## Pretrained Models
----
 > Note: Due to the random sampling operation for generating different types of queries and keys, the final performance of the model would have a minor perturbation of about **$\pm$ 0.2** mAP.
 
 > We will update the download links later.
