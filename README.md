@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ## Training and Evaluation
 > Note: we reorganize the code from the initial version to make it more readable. There would exist some bugs... Please let me know and I will update it as soon as possible.
 
-> Note: There exists a minor mistake in Figure.5 of our paper. The encoded feature map $`\textbf{Y}`$ from CLHead are added on rather than concatenated with the roi feature map $`\textbf{X}`$ in our code.
+> Note: There exists a minor mistake in Figure.5 of our paper. The encoded feature map $`Y`$ from CLHead are added on rather than concatenated with the roi feature map $`X`$ in our code.
 
 ### Training
 
@@ -62,7 +62,7 @@ bash ./iscript/dist_test.sh iconfig/contrastmask_res50_fpn_coco_1x_nonvoc2voc.py
 <br>
 
 ## Pretrained Models
-> Note: Due to the random sampling operation for generating different types of queries and keys, the final performance of the model would have a minor perturbation of about **$`\pm`$ 0.2** mAP.
+> Note: Due to the random sampling operation for generating different types of queries and keys, the final performance of the model would have a minor perturbation of about **-0.2~+0.2** mAP.
 
 > We will update the download links later.
 
