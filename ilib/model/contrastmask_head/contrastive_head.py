@@ -26,12 +26,14 @@ class ContrastiveHead(BaseModule):
                  conv_kernel_size=3,
                  conv_out_channels=256,
                  fc_out_channels=256,
-                 num_per_type=dict(Epos_num=5,Hpos_num=5,Eneg_num=20,Hneg_num=20),
                  upsample_cfg=dict(type='deconv', scale_factor=2),
                  conv_cfg=None,
                  norm_cfg=None,
                  fc_norm_cfg=None,
                  projector_cfg=dict(type='Linear'),
+                 thred_u=0.1,
+                 scale_u=1.0,
+                 percent=0.3,
                  init_cfg=None):
         assert init_cfg is None, 'To prevent abnormal initialization ' \
                                  'behavior, init_cfg is not allowed to be set'
@@ -60,8 +62,10 @@ class ContrastiveHead(BaseModule):
         self.fc_norm_cfg = fc_norm_cfg
         self.projector_cfg = projector_cfg
         self.fp16_enabled = False
-        self.num_per_type = num_per_type  #maybe useless
         self.weight=0.0  # init variable, this will be rewrite in different epoch
+        self.thred_u = thred_u
+        self.scale_u = scale_u
+        self.percent = percent
 
         #build encoder module
         self.encoder = ModuleList()
@@ -109,7 +113,7 @@ class ContrastiveHead(BaseModule):
 
         # 1. get query and keys
         if masks is not None: #training phase
-            sample_results = get_query_keys(cams, edges, masks, is_novel=is_novel, thred_u=0.1, percent=0.3)
+            sample_results = get_query_keys(cams, edges, masks, is_novel=is_novel, thred_u=self.thred_u, scale_u=self.scale_u, percent=self.percent)
             keeps_ = sample_results['keeps']
             keeps = keeps_.reshape(-1,1,1)
             keeps = keeps.expand(keeps.shape[0], x.shape[2], x.shape[2])  # points of a reserved porposal are assigned 'keep'
