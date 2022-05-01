@@ -41,6 +41,9 @@ pip install -r requirements.txt
 > Note: There exists a minor mistake in Figure.5 of our paper. The encoded feature map $\textbf{Y}$ from CLHead are added on rather than concatenated with the roi feature map $\textbf{X}$ in our code.
 
 ### Training
+
+First of all, please update the value of ``data_root`` as your dataset path in config files.
+
 Our code is based on MMDetection, thus the training and evaluation pipeline are the same with that in MMDetection. Here, we give an example script to train a model with res-50 backbone under 1x schedule for voc->nonvoc setting.
 ``` bash
 bash run_train.sh
